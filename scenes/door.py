@@ -1,17 +1,21 @@
 from printer import input, print
 
 from scenes.model import Scene
+from scenes.elevator import ElevatorScene
 
 
 class DoorScene(Scene):
     def run(self):
         print(
-            "\nIt's a warmer day than expected in New York.  You're overdressed "
-            "for the day and are hot and sweaty from your train ride in from Brooklyn"
+            "\nYou're in front of the heavy building door.  Both of your keys looks basically the same."
         )
-        print("You arrive at the RippleMatch office bright and early.")
+        print(
+            "Do you want to use the silverish gold key with a nub or the gold silverish key with two nubs?"
+        )
+        input(["Use gold key", "Use silver key"])
+        print(
+            "I always pick the wrong damn key. I should really add tape to the door key."
+        )
+        print("You unlock the door with the other key and enter the lobby.")
 
-        print("What do you want to do?")
-        action = input(["Enter", "Coffee run"])
-
-        # return ElevatorScene()
+        return ElevatorScene()

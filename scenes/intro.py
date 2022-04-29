@@ -1,7 +1,8 @@
 from printer import print
 
 from scenes.model import Scene
-from scenes.kitchen import KitchenScene
+from scenes.coffee import CoffeeScene
+from scenes.door import DoorScene
 
 
 class IntroScene(Scene):
@@ -13,9 +14,9 @@ class IntroScene(Scene):
         print("You arrive at the RippleMatch office bright and early.")
 
         print("What do you want to do?")
+        action = input(["Enter", "Coffee run"])
 
-        return KitchenScene()
-        # action = input(["Enter", "Coffee run"])
-
-        # if action == "Enter":
-        #     return Door
+        if action == "Coffee run":
+            return CoffeeScene()
+        elif action == "Enter":
+            return DoorScene()
