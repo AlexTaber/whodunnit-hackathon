@@ -1,3 +1,5 @@
+from printer import print
+
 from scenes.model import Scene
 from scenes.engineering_table import EngineeringTableScene
 
