@@ -1,6 +1,7 @@
 from game.state import game_state
 from printer import input, print
 from rooms.model import Room
+from rooms.registry import room_scene_registry
 
 from scenes.coffee import CoffeeScene
 from scenes.model import Scene
@@ -20,6 +21,7 @@ class RoomScene:
         if action == "Go To Room":
             print("Where do you want to go?")
             name = input(game_state.room_names)
+            return room_scene_registry.get(name)
 
         if action == "Talk":
             print("Who do you want to talk to?")
