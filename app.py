@@ -18,6 +18,7 @@ from game import Game
 from game.state import game_state
 from rooms.model import kitchen
 from rooms.registry import room_scene_registry
+from scenes.title import TitleScene
 from scenes.kitchen import KitchenScene
 
 game_state.rooms.append(kitchen)
@@ -25,4 +26,4 @@ game_state.rooms.append(kitchen)
 room_scene_registry["Kitchen"] = KitchenScene()
 
 game = Game(game_state)
-game.run(KitchenScene())
+game.run(TitleScene())
