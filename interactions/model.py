@@ -3,5 +3,6 @@ from scenes.model import Scene
 
 
 class Interaction:
-    person: Person
-    scene: Scene
+    def __init__(self, person: Person, scene: Scene):
+        self.person = person
+        self.scene = scene

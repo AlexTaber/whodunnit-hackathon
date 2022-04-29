@@ -16,7 +16,10 @@
 
 from game import Game
 from game.state import game_state
-from scenes.title import TitleScene
+from rooms.model import kitchen
+from scenes.kitchen import KitchenScene
+
+game_state.rooms.append(kitchen)
 
 game = Game(game_state)
-game.run(TitleScene())
+game.run(KitchenScene())
