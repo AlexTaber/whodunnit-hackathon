@@ -1,4 +1,4 @@
-from scenes.prologue.title import TitleScene
+from scenes.title import TitleScene
 
 
 def launch(game):

@@ -16,7 +16,7 @@
 
 from game import Game
 from game.state import game_state
-from scenes.prologue.title import TitleScene
+from scenes.title import TitleScene
 
 game = Game(game_state)
 game.run(TitleScene())
