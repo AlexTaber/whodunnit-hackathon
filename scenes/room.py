@@ -12,9 +12,7 @@ class RoomScene:
         self.room = room
 
     def prompt_action(self) -> Scene:
-        print(
-            f"{self.room.description} In this room is {', '.join(self.room.get_names())}"
-        )
+        print(f"{self.room.description}")
         print("What do you want to do?")
         action = input(["Go To Room", "Talk", "Coffee Run"])
 

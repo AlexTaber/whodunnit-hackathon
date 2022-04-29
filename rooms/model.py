@@ -1,5 +1,10 @@
 from interactions.model import Interaction
-from persons.model import joy
+from persons.model import dan_b, dan_e, dan_i, dan_s, dee, joy
+from scenes.dan_b_interview import DanBInterview
+from scenes.dan_i_interview import DanIInterviewScene
+from scenes.dan_s_interview import DanSInterviewScene
+from scenes.daniel_e_interview import DanielEInterviewScene
+from scenes.dee_interview import DeeInterviewScene
 from scenes.joy_interview import JoyInterviewScene
 from scenes.model import Scene
 
@@ -21,11 +26,45 @@ class Room:
 
 kitchen = Room(
     name="Kitchen",
-    descrription="You suddenly feel a wave of hunger as you enter the kitchen.",
+    descrription="You walk into the Kitchen. The sink is filled with dirty coffee cups. There's White Claw  & LaCroix cans overflowing the recycling bin. Dan I & Dan S are trying to figure out how to make coffee.",
+    interactions=[
+        Interaction(
+            person=dan_s,
+            scene=DanSInterviewScene(),
+        ),
+        Interaction(
+            person=dan_i,
+            scene=DanIInterviewScene(),
+        ),
+    ],
+)
+
+engineering_table = Room(
+    name="Engineering Table",
+    descrription="Dee and Joy are at the table discussing how to best implement Andrea's hopes & desires for the Candidate flow.",
     interactions=[
         Interaction(
             person=joy,
             scene=JoyInterviewScene(),
-        )
+        ),
+        Interaction(
+            person=dee,
+            scene=DeeInterviewScene(),
+        ),
+    ],
+)
+
+bathroom = Room(
+    name="Bathroom",
+    descrription="You walk through the bathroom hall and see Lauren digging for something in the closet. Boxes are everywhere. Daniel E & Dan B are standing in the middle of the hallway filling the remainder of the space. Damn tall people.",
+    interactions=[
+        Interaction(
+            person=dan_e,
+            scene=DanielEInterviewScene(),
+        ),
+        Interaction(
+            person=dan_b,
+            scene=DanBInterview(),
+        ),
     ],
 )
