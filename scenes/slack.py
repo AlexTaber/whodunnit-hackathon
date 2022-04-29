@@ -1,8 +1,7 @@
-from printer import print
+from printer import input, print
 
-
-from scenes.model import Scene
 from scenes.arrival import ArrivalScene
+from scenes.model import Scene
 
 
 class SlackScene(Scene):

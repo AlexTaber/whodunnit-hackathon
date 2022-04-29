@@ -1,8 +1,8 @@
-from printer import print
+from printer import input, print
 
-from scenes.model import Scene
 from scenes.coffee import CoffeeScene
 from scenes.door import DoorScene
+from scenes.model import Scene
 
 
 class IntroScene(Scene):

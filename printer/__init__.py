@@ -26,10 +26,7 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
     console.print("", end=end)
 
 
-# def input(
-#     content: str, valid_inputs: Optional[list[str]], end="\n", delay=0.02, pause=0.5
-# ) -> str:
-def input(valid_inputs: Optional[list[str]]) -> str:
+def input(valid_inputs: Optional[list[str]] = None) -> str:
     if valid_inputs:
         print(f"[info]Please select from '{', '.join(valid_inputs)}'", delay=0, pause=0)
 

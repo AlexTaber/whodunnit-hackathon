@@ -1,4 +1,4 @@
-from printer import print
+from printer import print, input
 
 
 from scenes.model import Scene
