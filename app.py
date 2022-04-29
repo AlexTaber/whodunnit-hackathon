@@ -15,7 +15,8 @@
 # print("[green].........................", pause=0)
 
 from game import Game
-from launcher import launch
+from game.state import game_state
+from scenes.prologue.title import TitleScene
 
-game = Game()
-launch(game)
+game = Game(game_state)
+game.run(TitleScene())

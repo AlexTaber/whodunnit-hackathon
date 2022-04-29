@@ -1,6 +1,7 @@
 import re
 from dataclasses import dataclass
 from time import sleep
+from typing import Optional
 
 from rich.console import Console
 
@@ -23,6 +24,25 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
 
     sleep(pause)
     console.print("", end=end)
+
+
+# def input(
+#     content: str, valid_inputs: Optional[list[str]], end="\n", delay=0.02, pause=0.5
+# ) -> str:
+def input(valid_inputs: Optional[list[str]]) -> str:
+    if valid_inputs:
+        print(f"[info]Please select from '{', '.join(valid_inputs)}'", delay=0, pause=0)
+
+    value = console.input("")
+    if not valid_inputs or value in valid_inputs:
+        return value
+    else:
+        print(
+            f"[info]Hmm sorry, not valid, please select from '{', '.join(valid_inputs)}'",
+            delay=0,
+            pause=0,
+        )
+        return input(valid_inputs)
 
 
 def _get_content_array(content: str) -> list[Content]:

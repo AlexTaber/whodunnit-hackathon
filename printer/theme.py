@@ -4,5 +4,6 @@ custom_theme = Theme(
     {
         "primary": "magenta",
         "secondary": "cyan",
+        "info": "yellow",
     }
 )
