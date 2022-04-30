@@ -1,7 +1,7 @@
 class GameState:
     def __init__(self):
         self.scene_history = []
-        self.rooms = []
+        self.current_place = None
         self.player_name = "Michael"
 
     @property
@@ -17,10 +17,6 @@ class GameState:
             return self.scene_history[-2]
         except IndexError:
             return None
-
-    @property
-    def room_names(self):
-        return [room.name for room in self.rooms]
 
 
 game_state = GameState()
