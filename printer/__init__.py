@@ -2,6 +2,7 @@ import re
 from dataclasses import dataclass
 from time import sleep
 from typing import Optional
+from game.state import game_state
 
 from rich.console import Console
 
@@ -23,7 +24,9 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
     for content in content_arr:
         _print_content(content, delay)
 
-    sleep(pause)
+    if not game_state.qa_mode:
+        sleep(pause)
+
     console.print("", end=end)
 
 
@@ -100,4 +103,6 @@ def _get_input_options(option_strings: list[str]) -> dict:
 def _print_content(content: Content, delay: float):
     for char in content.text:
         console.print(f"{content.style}{char}", end="")
-        sleep(delay)
+
+        if not game_state.qa_mode:
+            sleep(delay)

@@ -18,5 +18,9 @@ class GameState:
         except IndexError:
             return None
 
+    @property
+    def qa_mode(self):
+        return self.player_name.lower() == "qa"
+
 
 game_state = GameState()
