@@ -1,7 +1,7 @@
 from printer import print
 
 from scenes.model import Scene
-from scenes.engineering_table import EngineeringTableScene
+from rooms.registry import room_scene_registry
 
 
 class ArrivalScene(Scene):
@@ -16,4 +16,4 @@ class ArrivalScene(Scene):
         print(
             "\nAlso, it looks like the Dans are all here... Dan B., Dan S., Dan 'Dee' Ansong, Dan E, Dan I..."
         )
-        return EngineeringTableScene()
+        return room_scene_registry.get("Engineering Table").scene
