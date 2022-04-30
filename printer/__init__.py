@@ -88,7 +88,7 @@ def _get_input_options(option_strings: list[str]) -> dict:
             if not options_map.get(shortcut):
                 options_map[shortcut] = {
                     "shortcut": shortcut,
-                    "label": f"({shortcut}) {option_string}",
+                    "label": f"$[primary]({shortcut})$ {option_string}",
                     "text": option_string
                 }
                 break
