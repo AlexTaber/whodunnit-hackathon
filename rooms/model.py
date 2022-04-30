@@ -26,7 +26,7 @@ class Room:
 
 kitchen = Room(
     name="Kitchen",
-    descrription="You walk into the Kitchen. The sink is filled with dirty coffee cups. There's White Claw  & LaCroix cans overflowing the recycling bin. Dan I & Dan S are trying to figure out how to make coffee.",
+    descrription="You walk into the kitchen. The sink is filled with dirty coffee cups. There's White Claw  & LaCroix cans overflowing the recycling bin. Dan I & Dan S are trying to figure out how to make coffee.",
     interactions=[
         Interaction(
             person=dan_s,
@@ -41,7 +41,7 @@ kitchen = Room(
 
 engineering_table = Room(
     name="Engineering Table",
-    descrription="Dee and Joy are at the table discussing how to best implement Andrea's hopes & desires for the Candidate flow.",
+    descrription="You walk over to the Engineering Table. Dee and Joy are at the table discussing how to best implement Andrea's hopes & desires for the Candidate flow.",
     interactions=[
         Interaction(
             person=joy,
@@ -56,7 +56,7 @@ engineering_table = Room(
 
 bathroom = Room(
     name="Bathroom",
-    descrription="You walk through the bathroom hall and see Lauren digging for something in the closet. Boxes are everywhere. Daniel E & Dan B are standing in the middle of the hallway filling the remainder of the space. Damn tall people.",
+    descrription="You make your way to the bathroom. In the hall you see Lauren digging for something in the closet, boxes strewn everywhere. Daniel E & Dan B are standing in line to use the bathroom. Too much coffee for everyone this morning.",
     interactions=[
         Interaction(
             person=dan_e,
