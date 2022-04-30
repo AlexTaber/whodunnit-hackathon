@@ -28,12 +28,12 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
 
 
 def input(valid_inputs: Optional[list[str]] = None) -> str:
-    options_prompt = ""
     options = []
 
     if valid_inputs:
         options = _get_input_options(valid_inputs)
-        options_prompt = f"[info]Please select from '{', '.join([option['label'] for option in options])}'"
+        select_options = "\n".join([option['label'] for option in options])
+        options_prompt = f"[info]Please select:\n{select_options}"
         print(options_prompt, delay=0, pause=0)
 
     value = console.input("")
@@ -52,7 +52,7 @@ def input(valid_inputs: Optional[list[str]] = None) -> str:
             return selected_option["text"]
         else:
             print(
-                f"[danger]Invalid input. $[info]{options_prompt}",
+                f"[danger]Invalid input",
                 delay=0,
                 pause=0,
             )
@@ -83,12 +83,12 @@ def _get_input_options(option_strings: list[str]) -> dict:
 
     for option_string in option_strings:
         for index, char in enumerate(option_string):
-            shortcut = option_string[:index + 1]
+            shortcut = str(index + 1)
 
             if not options_map.get(shortcut):
                 options_map[shortcut] = {
                     "shortcut": shortcut,
-                    "label": f"({shortcut}){option_string[index+1:]}",
+                    "label": f"({shortcut}) {option_string}",
                     "text": option_string
                 }
                 break
