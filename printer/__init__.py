@@ -16,6 +16,7 @@ class Content:
     text: str
 
 
+
 def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
     content_arr = _get_content_array(content)
 
@@ -27,19 +28,35 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
 
 
 def input(valid_inputs: Optional[list[str]] = None) -> str:
+    options_prompt = ""
+    options = []
+
     if valid_inputs:
-        print(f"[info]Please select from '{', '.join(valid_inputs)}'", delay=0, pause=0)
+        options = _get_input_options(valid_inputs)
+        options_prompt = f"[info]Please select from '{', '.join([option['label'] for option in options])}'"
+        print(options_prompt, delay=0, pause=0)
 
     value = console.input("")
-    if not valid_inputs or value in valid_inputs:
+
+    if not valid_inputs:
         return value
     else:
-        print(
-            f"[info]Hmm sorry, not valid, please select from '{', '.join(valid_inputs)}'",
-            delay=0,
-            pause=0,
-        )
-        return input(valid_inputs)
+        selected_option = None
+
+        for option in options:
+            if option["shortcut"].lower() == value.lower():
+                selected_option = option
+                break
+
+        if selected_option:
+            return selected_option["text"]
+        else:
+            print(
+                f"[info]Hmm sorry, not valid. {options_prompt}",
+                delay=0,
+                pause=0,
+            )
+            return input(valid_inputs)
 
 
 def _get_content_array(content: str) -> list[Content]:
@@ -59,6 +76,25 @@ def _get_style_from_string(content: str) -> str:
         return content[content.find("[") : content.find("]") + 1]
     else:
         return ""
+
+    
+def _get_input_options(option_strings: list[str]) -> dict:
+    options_map = {}
+
+    for option_string in option_strings:
+        for index, char in enumerate(option_string):
+            shortcut = option_string[:index + 1]
+
+            if not options_map.get(shortcut):
+                options_map[shortcut] = {
+                    "shortcut": shortcut,
+                    "label": f"({shortcut}){option_string[index+1:]}",
+                    "text": option_string
+                }
+                break
+
+    return list(options_map.values())
+
 
 
 def _print_content(content: Content, delay: float):
