@@ -6,5 +6,6 @@ custom_theme = Theme(
         "secondary": "cyan",
         "info": "yellow",
         "danger": "red",
+        "muted": "bright_black",
     }
 )

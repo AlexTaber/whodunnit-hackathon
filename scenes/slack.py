@@ -17,7 +17,7 @@ class SlackScene(Scene):
         self._print_slack("Lauren", "I'm not cleaning that up")
         self._print_slack("Dan B", "Big yikes")
         self._print_slack("Eric", "Sorry can't help, with other VCs")
-        self._print_slack("Andrew", "Please keep Gunner away from the body\n")
+        self._print_slack("Andrew", "Please keep Gunner away from the body")
 
         return ArrivalScene()
 

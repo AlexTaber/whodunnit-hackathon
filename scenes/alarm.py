@@ -1,3 +1,5 @@
+import hashlib
+
 from printer import print, input
 
 from scenes.model import Scene
@@ -6,17 +8,20 @@ from scenes.murder import MurderScene
 
 class AlarmScene(Scene):
     def run(self):
-        print(
-            "\nAlarm Pad is beeping begging for you to smash its buttons with the correct code"
-        )
-        print(
-            "You start to sweat more worried you'll enter the wrong code.  Enter the code:"
-        )
+        print("\nThe alarm pad is beeping ominously.  Its screen reads ", end="")
+        print("[primary]ARMED", delay=0.2)
+        print("You know the alarm code, right?  Enter the code:")
         value = input(None)
-        print(f"\nYou enter {value} and it happens to be wrong")
-        print(
-            "You open your phone to look at our Notion doc to get the correct passcode while the alarm beeping gets faster"
-        )
-        print("You finally enter the correct code")
+        code_hash = hashlib.sha256(value.encode("utf-8")).hexdigest()
+        if (
+            code_hash
+            == "7ac25d5d84cae3dcc037c52a93dfe320fe83b2a6abe787451b4fc15aeba2c9e7"
+        ):
+            print("The alarm goes ", end="")
+            print("[primary]DISARMED - READY TO ARM", delay=0.1)
+        else:
+            print(f"\nYou enter {value}. That's not the code.")
+            print("The alarm begins emitting a high-pitched screech.")
+            print("Meh, it's probably fine.")
 
         return MurderScene()
