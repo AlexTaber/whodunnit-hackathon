@@ -2,52 +2,62 @@ from printer import print
 from scenes.model import Scene
 from scenes.intro import IntroScene
 from printer import input
+from game.state import game_state
 
 
 class CreateCharacterScene(Scene):
     def run(self) -> IntroScene:
+        print("What is your name?")
+        game_state.player_name = input()
+
         print("Select character class:")
 
-        print("\nEngineer")
-        print("Special ability: Crippling anxiety")
+        self._print_class("Engineer", "Crippling Anxiety")
+        self._print_class("Product Manager", "Jira Mastery")
+        self._print_class("Salesperson", "Smooth Talkin'")
+        self._print_class("New Hire", "On-Site Onboarding Per Diem")
 
-        print("\nProduct Manager")
-        print("Special ability: Jira Mastery")
-
-        print("\nSales")
-        print("Special ability: Smooth talkin'")
-
-        print("\nNew Hire")
-        print("Special ability: On-site onboarding per diem")
-
-        result = input(["Engineer", "Product Manager", "Sales", "New Hire"])
+        result = input(["Engineer", "Product Manager", "Salesperson", "New Hire"])
 
         if result == "Engineer":
-            print("You're an engineer, master of code")
-            print("Stats:")
-            print("Inteligence: 5", delay=0, pause=0.1)
-            print("Charisma: null", delay=0, pause=0.1)
-            print("Stamina: 4", delay=0, pause=0.1)
-            print("People skills: 1", delay=0, pause=0.1)
+            self._print_selected_class("You're an $[primary]Engineer$, master of code", {
+                "Intelligence": 5,
+                "Charisma": "null",
+                "Stamina": 4,
+                "People Skills": 1
+            })
         elif result == "Product Manager":
-            print("You're a product manager, master of product")
-            print("Inteligence: 3", delay=0, pause=0.1)
-            print("Charisma: 1", delay=0, pause=0.1)
-            print("Stamina: 5", delay=0, pause=0.1)
-            print("People skills: 3", delay=0, pause=0.1)
-        elif result == "Sales":
-            print("You're a sales, master of the close")
-            print("Inteligence: 2")
-            print("Charisma: 5")
-            print("Stamina: 3")
-            print("People skills: 4")
+            self._print_selected_class("You're a $[primary]Product Manager$, master of product", {
+                "Intelligence": 3,
+                "Charisma": 1,
+                "Stamina": 5,
+                "People Skills": 3
+            })
+        elif result == "Salesperson":
+            self._print_selected_class("You're a $[primary]Salesperson$, master of the close", {
+                "Intelligence": 2,
+                "Charisma": 5,
+                "Stamina": 3,
+                "People Skills": 4
+            })
         elif result == "New Hire":
-            print("You're a new hire, master of none")
-            print("Inteligence: null")
-            print("Charisma: null")
-            print("Stamina: null")
-            print("People skills: null")
+            self._print_selected_class("You're a $[primary]New Hire$, master of none", {
+                "Intelligence": "null",
+                "Charisma": "null",
+                "Stamina": "null",
+                "People Skills": "null"
+            })
 
         # TODO - save class to game state
 
         return IntroScene()
+
+    def _print_class(self, name: str, ability: str):
+        print(f"[primary]\n{name}", delay=0)
+        print(f"Special Ability: $[secondary]{ability}", delay=0)
+
+    def _print_selected_class(self, desc: str, stats: dict):
+        print(desc)
+
+        for key in list(stats.keys()):
+            print(f"[primary]{key}: $[secondary]{stats.get(key)}", delay=0)

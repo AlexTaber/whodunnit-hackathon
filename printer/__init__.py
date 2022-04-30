@@ -52,7 +52,7 @@ def input(valid_inputs: Optional[list[str]] = None) -> str:
             return selected_option["text"]
         else:
             print(
-                f"[info]Hmm sorry, not valid. {options_prompt}",
+                f"[danger]Invalid input. $[info]{options_prompt}",
                 delay=0,
                 pause=0,
             )

@@ -4,6 +4,7 @@ from rooms.model import Room
 from rooms.registry import room_scene_registry
 
 from scenes.coffee import CoffeeScene
+from scenes.declare_murderer import DelcareMurdererScene
 from scenes.model import Scene
 
 
@@ -14,7 +15,7 @@ class RoomScene:
     def prompt_action(self) -> Scene:
         print(f"{self.room.description}")
         print("What do you want to do?")
-        action = input(["Go To Room", "Talk", "Coffee Run"])
+        action = input(["Go To Room", "Talk", "Coffee Run", "Declare Murderer"])
 
         if action == "Go To Room":
             print("Where do you want to go?")
@@ -28,3 +29,6 @@ class RoomScene:
 
         if action == "Coffee Run":
             return CoffeeScene()
+
+        if action == "Declare Murderer":
+            return DelcareMurdererScene()

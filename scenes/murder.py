@@ -26,6 +26,6 @@ class MurderScene(Scene):
         print(
             "\nYou hear him breathe. You run to the VC honcho.  As the life drains from their lips, they say..."
         )
-        print("[primary]\nDan did it...\n")
+        print("[primary]\n...Dan did it...\n", delay=0.5)
 
         return SlackScene()

@@ -2,6 +2,7 @@ class GameState:
     def __init__(self):
         self.scene_history = []
         self.rooms = []
+        self.player_name = "Michael"
 
     @property
     def current_scene(self):
