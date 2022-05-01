@@ -1,8 +1,13 @@
+from typing import Optional
+from battle.characters.model import Character
+
+
 class GameState:
     def __init__(self):
         self.scene_history = []
         self.current_place = None
-        self.player_name = "Michael"
+        self.rooms = []
+        self.player_character: Optional[Character] = None
 
     @property
     def current_scene(self):

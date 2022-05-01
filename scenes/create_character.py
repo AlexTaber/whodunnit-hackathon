@@ -1,54 +1,47 @@
-from printer import print
-from scenes.model import Scene
-from scenes.intro import IntroScene
-from printer import input
+import battle_configuration.jobs as jobs
+from battle.characters.model import Character
 from game.state import game_state
+from printer import input, print
+from scenes.intro import IntroScene
+from scenes.model import Scene
 
 
 class CreateCharacterScene(Scene):
-    def run(self) -> IntroScene:
+    def run(self) -> Scene:
         print("What is your name?")
-        game_state.player_name = input()
+        player_name = input()
 
         print("Select character class:")
 
-        self._print_class("Engineer", "Crippling Anxiety")
-        self._print_class("Product Manager", "Jira Mastery")
-        self._print_class("Salesperson", "Smooth Talkin'")
-        self._print_class("New Hire", "On-Site Onboarding Per Diem")
+        valid_jobs = [
+            jobs.engineer,
+            jobs.product_manager,
+            jobs.salesperson,
+            jobs.new_hire,
+        ]
+        for job in valid_jobs:
+            self._print_class(job.name, job.limit_break.name)
 
-        result = input(["Engineer", "Product Manager", "Salesperson", "New Hire"])
+        selected_job_name = input([job.name for job in valid_jobs])
+        selected_job = [job for job in valid_jobs if job.name == selected_job_name][0]
 
-        if result == "Engineer":
-            self._print_selected_class("You're an $[primary]Engineer$, master of code", {
-                "Intelligence": 5,
-                "Charisma": "null",
-                "Stamina": 4,
-                "People Skills": 1
-            })
-        elif result == "Product Manager":
-            self._print_selected_class("You're a $[primary]Product Manager$, master of product", {
-                "Intelligence": 3,
-                "Charisma": 1,
-                "Stamina": 5,
-                "People Skills": 3
-            })
-        elif result == "Salesperson":
-            self._print_selected_class("You're a $[primary]Salesperson$, master of the close", {
-                "Intelligence": 2,
-                "Charisma": 5,
-                "Stamina": 3,
-                "People Skills": 4
-            })
-        elif result == "New Hire":
-            self._print_selected_class("You're a $[primary]New Hire$, master of none", {
-                "Intelligence": "null",
-                "Charisma": "null",
-                "Stamina": "null",
-                "People Skills": "null"
-            })
+        game_state.player_character = Character(
+            name=player_name,
+            job=selected_job,
+            level=5,
+            hp=20,
+            max_hp=20,
+        )
 
-        # TODO - save class to game state
+        self._print_selected_class(
+            f"You're an $[primary]{selected_job.name}$, {selected_job.motto}",
+            {
+                "Intelligence": selected_job.base_intelligence,
+                "Charisma": selected_job.base_charisma,
+                "Stamina": selected_job.base_stamina,
+                "People Skills": selected_job.base_people_skills,
+            },
+        )
 
         return IntroScene()
 
