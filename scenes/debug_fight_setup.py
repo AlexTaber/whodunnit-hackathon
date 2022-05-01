@@ -10,7 +10,7 @@ class DebugFightSetup(Scene):
 
         game_state.player_character = Character(
             name="QA",
-            job=jobs.new_hire,
+            job=jobs.engineer,
             level=5,
             hp=20,
             max_hp=20,
