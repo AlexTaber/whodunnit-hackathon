@@ -7,7 +7,7 @@ from state import game_state
 class SlackScene(Scene):
     def run(self):
         print("\nYou grab your phone to message #coreteam to get help.")
-        print("Enter your cry for help:")
+        print("[info]Enter your cry for help:")
         value = input()
 
         self._print_slack(game_state.player_character.name, value)  # type: ignore

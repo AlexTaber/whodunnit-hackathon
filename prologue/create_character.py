@@ -13,7 +13,7 @@ p = inflect.engine()
 
 class CreateCharacterScene(Scene):
     def run(self) -> Scene:
-        print("What is your name?")
+        print("[info]What is your name?")
         player_name = input()
 
         if player_name.lower() == "qa":
