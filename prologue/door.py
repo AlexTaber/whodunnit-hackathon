@@ -12,9 +12,7 @@ class DoorScene(Scene):
             "Do you want to use the silverish gold key with a nub or the gold silverish key with two nubs?"
         )
         input(["Use gold key", "Use silver key"])
-        print(
-            "I always pick the wrong damn key. I should really add tape to the door key."
-        )
+        print("You pick the wrong key. You should really add tape to the door key.")
         print("You unlock the door with the other key and enter the lobby.")
 
         return ElevatorScene()
