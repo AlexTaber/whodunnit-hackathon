@@ -1,5 +1,6 @@
 from printer import print
 
+from scenes.final_boss import FinalBoss
 from scenes.model import Scene
 
 
@@ -13,6 +14,4 @@ class DanIAdmissionScene(Scene):
         print("[secondary] Why does this keep happening to me?!")
         print("[secondary] I regret nothing, he deserved it.\n\n")
 
-        print("...", delay=0.5)
-
-        print("Way to go detective! You solved the case!")
+        return FinalBoss()
