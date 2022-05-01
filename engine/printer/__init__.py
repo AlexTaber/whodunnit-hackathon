@@ -10,6 +10,9 @@ from engine.printer.theme import custom_theme
 
 console = Console(theme=custom_theme)
 
+state = {
+    "current_char_width": 0
+}
 
 @dataclass
 class Content:
@@ -26,6 +29,9 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
 
     if not game.state.dev_mode:
         sleep(pause)
+
+    if end == "\n":
+        state["current_char_width"] = 0
 
     console.print("", end=end)
 
@@ -102,6 +108,14 @@ def _get_input_options(option_strings: list[str]) -> dict:
 
 def _print_content(content: Content, delay: float):
     for char in content.text:
+        state["current_char_width"] += 1
+
+        if state["current_char_width"] > 80 and char == " ":
+            char = "\n"
+            state["current_char_width"] = 0
+        elif char == "\n":
+            state["current_char_width"] = 0
+
         console.print(f"{content.style}{char}", end="")
 
         if not game.state.dev_mode:
