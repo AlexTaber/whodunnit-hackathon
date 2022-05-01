@@ -52,6 +52,7 @@ class BaseBattle:
             pause=0.2,
         )
 
+
 class Battle(BaseBattle):
     """A battle that prints the outcome.
 
@@ -71,11 +72,6 @@ class Battle(BaseBattle):
 
         return winner
 
-    def _revive_player(self):
-        print(f"{self.savior.label} arrives at your side!")
-        for move in self.savior.job.moves:
-            action = Action(move=move, caster=self.savior, target=self.player.character)
-            action.execute()
 
 class RiggedBattle(BaseBattle):
     """A battle in which the player is guaranteed to win.
