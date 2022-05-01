@@ -2,8 +2,8 @@ import random
 
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.slack import SlackScene
-from night_of_1000_dans.world.coffee.scenes.coffee import CoffeeScene
+from prologue.slack import SlackScene
+from prologue.coffee import CoffeeScene
 
 
 class MurderScene(Scene):

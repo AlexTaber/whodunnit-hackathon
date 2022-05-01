@@ -1,7 +1,7 @@
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.door import DoorScene
-from night_of_1000_dans.world.coffee.scenes.coffee import CoffeeScene
+from prologue.door import DoorScene
+from prologue.coffee import CoffeeScene
 
 
 class IntroScene(Scene):

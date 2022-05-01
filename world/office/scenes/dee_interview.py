@@ -1,6 +1,6 @@
 from engine.scene import Scene
 from engine.printer import print
-from night_of_1000_dans.state import game_state
+from state import game_state
 
 
 class DeeInterviewScene(Scene):

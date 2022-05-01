@@ -1,7 +1,7 @@
 from engine.scene import Scene
 from engine.printer import print
 from engine.game import game
-from night_of_1000_dans.world.office import office
+from world.office import office
 
 
 class ArrivalScene(Scene):

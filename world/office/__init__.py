@@ -3,14 +3,14 @@ from engine.world.named_entity import NamedEntity
 from engine.world.place import Place
 from engine.world.room import Room
 
-from night_of_1000_dans.world.coffee.scenes.coffee import CoffeeScene
-from night_of_1000_dans.world.office.scenes.dan_b_interview import DanBInterviewScene
-from night_of_1000_dans.world.office.scenes.dan_i_interview import DanIInterviewScene
-from night_of_1000_dans.world.office.scenes.daniel_e_interview import DanielEInterviewScene
-from night_of_1000_dans.world.office.scenes.dan_s_interview import DanSInterviewScene
-from night_of_1000_dans.world.office.scenes.declare_murderer import DelcareMurdererScene
-from night_of_1000_dans.world.office.scenes.dee_interview import DeeInterviewScene
-from night_of_1000_dans.world.office.scenes.joy_interview import JoyInterviewScene
+from prologue.coffee import CoffeeScene
+from world.office.scenes.dan_b_interview import DanBInterviewScene
+from world.office.scenes.dan_i_interview import DanIInterviewScene
+from world.office.scenes.daniel_e_interview import DanielEInterviewScene
+from world.office.scenes.dan_s_interview import DanSInterviewScene
+from world.office.scenes.declare_murderer import DelcareMurdererScene
+from world.office.scenes.dee_interview import DeeInterviewScene
+from world.office.scenes.joy_interview import JoyInterviewScene
 
 
 def _get_room_actions() -> list[dict]:

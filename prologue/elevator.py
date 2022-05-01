@@ -1,6 +1,6 @@
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.alarm import AlarmScene
+from prologue.alarm import AlarmScene
 
 
 class ElevatorScene(Scene):

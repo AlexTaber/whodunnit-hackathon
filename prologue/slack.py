@@ -1,7 +1,7 @@
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.arrival import ArrivalScene
-from night_of_1000_dans.state import game_state
+from prologue.arrival import ArrivalScene
+from state import game_state
 
 
 class SlackScene(Scene):

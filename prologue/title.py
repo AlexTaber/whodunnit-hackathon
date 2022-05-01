@@ -1,6 +1,6 @@
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.create_character import CreateCharacterScene
+from prologue.create_character import CreateCharacterScene
 
 
 class TitleScene(Scene):

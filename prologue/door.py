@@ -1,6 +1,6 @@
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.elevator import ElevatorScene
+from prologue.elevator import ElevatorScene
 
 
 class DoorScene(Scene):

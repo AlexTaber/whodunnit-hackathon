@@ -1,7 +1,7 @@
 import hashlib
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.prologue.murder import MurderScene
+from prologue.murder import MurderScene
 
 
 class AlarmScene(Scene):

@@ -1,7 +1,7 @@
 from engine.scene import Scene
 from engine.printer import print, input
-from night_of_1000_dans.state import game_state
-from night_of_1000_dans.world.office.scenes.dan_i_admission import DanIAdmissionScene
+from state import game_state
+from world.office.scenes.dan_i_admission import DanIAdmissionScene
 
 
 class DelcareMurdererScene(Scene):
