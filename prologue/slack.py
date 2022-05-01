@@ -10,7 +10,7 @@ class SlackScene(Scene):
         print("Enter your cry for help:")
         value = input()
 
-        self._print_slack(game_state.player_name, value)
+        self._print_slack(game_state.player_character.name, value)  # type: ignore
         self._print_slack("Jacks", "😱😱😱 OMG 😱😱😱")
         self._print_slack("Shannon", "Do not touch anything!")
         self._print_slack("Lauren", "I'm not cleaning that up")

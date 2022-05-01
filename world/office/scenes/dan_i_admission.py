@@ -1,5 +1,6 @@
 from engine.scene import Scene
 from engine.printer import print
+from prologue.final_boss import FinalBoss
 
 
 class DanIAdmissionScene(Scene):
@@ -12,6 +13,4 @@ class DanIAdmissionScene(Scene):
         print("[secondary] Why does this keep happening to me?!")
         print("[secondary] I regret nothing, he deserved it.\n\n")
 
-        print("...", delay=0.5)
-
-        print("Way to go detective! You solved the case!")
+        return FinalBoss()
