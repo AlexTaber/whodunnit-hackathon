@@ -5,9 +5,9 @@ from engine.printer import print
 
 
 class BaseBattle:
-    """A battle in which the player is guaranteed to win.
+    """A battle that simply returns a winner.
 
-    The savior character will revive the player if the player faints.
+    This class may be wrapped with additional functionality ie the RiggedBattle
     """
 
     def __init__(self, player: Player, enemy: Player):
@@ -53,6 +53,11 @@ class BaseBattle:
         )
 
 class Battle(BaseBattle):
+    """A battle that prints the outcome.
+
+    This is the default battle class for fair encounters
+    """
+
     def __init__(self, player: Player, enemy: Player):
         super().__init__(player, enemy)
 
@@ -73,6 +78,11 @@ class Battle(BaseBattle):
             action.execute()
 
 class RiggedBattle(BaseBattle):
+    """A battle in which the player is guaranteed to win.
+
+    The savior character will revive the player if the player faints.
+    """
+
     def __init__(self, player: Player, enemy: Player, savior: Character):
         super().__init__(player, enemy)
         self.savior = savior
