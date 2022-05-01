@@ -136,7 +136,7 @@ supernova = LimitBreak(
         "{CASTER} channels his knowledge of arcane geometry to draw "
         "Alpha Centauri into our sun.  A blinding stellar explosion "
         "envelops Mercury and Venus.  The stratosphere ignites into an "
-        "inferno of red-hot plasma."
+        "inferno of white-hot plasma."
     ),
 )
 crippling_anxiety = LimitBreak(
@@ -165,11 +165,12 @@ smooth_talkin = LimitBreak(
     ),
 )
 core_values_alignment = LimitBreak(
-    name="Core Value Alignment",
+    name="Core Values Alignment",
     base_dmg=99,
     description=(
         "{CASTER}'s soul shines brightly. Five stars of pure virtue align. {CASTER} "
-        "anihilates {TARGET} with twin beams of Kindness and Authenticity."
+        "begins to levitate, their eyes glowing brighter than the sun. {CASTER} "
+        "anihilates {TARGET} with twin beams of KINDESS and AUTHENTICITY."
     ),
 )
 woof = LimitBreak(name="Woof")
