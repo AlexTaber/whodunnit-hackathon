@@ -1,6 +1,6 @@
 from engine.scene import Scene
 from engine.printer import print
-from prologue.final_boss import FinalBoss
+from world.office.scenes.final_boss import FinalBoss
 
 
 class DanIAdmissionScene(Scene):

@@ -6,6 +6,7 @@ class NOTDGameState(GameState):
     def __init__(self):
         super().__init__()
         self.player_character: Optional[Character] = None
+        self.pet_gunner = False
 
     @property
     def qa_mode(self):

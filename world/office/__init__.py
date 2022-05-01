@@ -10,10 +10,12 @@ from world.office.scenes.dan_s_interview import DanSInterviewScene
 from world.office.scenes.declare_murderer import DelcareMurdererScene
 from world.office.scenes.dee_interview import DeeInterviewScene
 from world.office.scenes.joy_interview import JoyInterviewScene
+from world.office.scenes.pet_gunner import PetGunnerScene
 
 
 def _get_room_actions() -> list[RoomAction]:
     return [
+        RoomAction(name="Give Gunner Pets", scene=PetGunnerScene()),
         RoomAction(name="Coffee run", scene=CoffeeScene()),
         RoomAction(name="Declare Whodunit!", scene=DelcareMurdererScene())
     ]

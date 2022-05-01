@@ -1,7 +1,7 @@
 import battle.jobs as jobs
 from engine.battle.character import Character
 from state import game_state
-from prologue.final_boss import FinalBoss
+from world.office.scenes.final_boss import FinalBoss
 from engine.scene import Scene
 
 
