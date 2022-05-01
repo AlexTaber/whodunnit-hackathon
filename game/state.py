@@ -25,7 +25,7 @@ class GameState:
 
     @property
     def qa_mode(self):
-        return self.player_name.lower() == "qa"
+        return self.player_character and self.player_character.name.lower() == "qa"
 
 
 game_state = GameState()
