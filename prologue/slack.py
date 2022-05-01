@@ -21,4 +21,4 @@ class SlackScene(Scene):
         return ArrivalScene()
 
     def _print_slack(self, sender: str, message: str):
-        print(f"[secondary] 8:21 AM - #coreteam: $[primary]@{sender}$ - {message}")
+        print(f"[secondary] 8:21 AM - #coreteam: |[primary]@{sender}| - {message}")

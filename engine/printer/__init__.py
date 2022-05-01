@@ -67,7 +67,7 @@ def input(valid_inputs: Optional[list[str]] = None) -> str:
 
 
 def _get_content_array(content: str) -> list[Content]:
-    content_arr = content.split("$")
+    content_arr = content.split("|")
 
     return [_get_content_from_string(content_string) for content_string in content_arr]
 
@@ -91,7 +91,7 @@ def _get_input_options(option_strings: list[str]) -> dict:
         shortcut = str(index + 1)
         options_map[shortcut] = {
             "shortcut": shortcut,
-            "label": f"$[primary]({shortcut})$ {option_string}",
+            "label": f"|[primary]({shortcut})| {option_string}",
             "text": option_string,
         }
 

@@ -6,7 +6,7 @@ from prologue.elevator import ElevatorScene
 class DoorScene(Scene):
     def run(self):
         print(
-            "\nYou're in front of the heavy building door.  Both of your keys looks basically the same."
+            "\nYou're in front of the heavy building door. Both of your keys look basically the same."
         )
         print(
             "Do you want to use the silverish gold key with a nub or the gold silverish key with two nubs?"

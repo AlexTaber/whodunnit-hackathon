@@ -16,10 +16,10 @@ class MurderScene(Scene):
         print(
             "\nYou recognize them -- it's the venture capitalist from yesterday's team meeting!"
         )
-        print("\nThe were going to fund our Series B!", end=" ")
+        print("\nThey were going to fund our Series B!", end=" ")
         print("[muted](This doesn't bode well for our stock options)")
         print(
-            "\nThey sit slouched against the wall of the ROOM-brand phone booth (available at hushoffice.com)"
+            "\nThey sit slouched against the wall of the ROOM-brand phone booth (available at hushoffice.com)."
         )
         print(
             "You scream at the grusome sight. You're not sure if they're dead or alive."
@@ -44,8 +44,10 @@ class MurderScene(Scene):
                 print("You should probably help them.")
 
         print(
-            "\nYou hear them breathe. You run to the VC honcho.  As the life drains from their lips, they say..."
+            "\nYou hear them breathe. You run to the VC honcho. As the life drains from their lips, they say..."
         )
-        print("[primary]\n...Dan did it...", delay=0.5)
+        print("[primary]\n...Dan killed me...", delay=0.2)
+        print("\nOh God! How could Dan do such a thing?")
+        print("Wait a second. Which Dan was it? There are like a |[primary]THOUSAND| Dans at RippleMatch!")
 
         return SlackScene()
