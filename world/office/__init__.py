@@ -1,5 +1,4 @@
-from engine.world.interaction import Interaction
-from engine.world.named_entity import NamedEntity
+from engine.world.room_action import RoomAction
 from engine.world.place import Place
 from engine.world.room import Room
 
@@ -13,17 +12,10 @@ from world.office.scenes.dee_interview import DeeInterviewScene
 from world.office.scenes.joy_interview import JoyInterviewScene
 
 
-def _get_room_actions() -> list[dict]:
+def _get_room_actions() -> list[RoomAction]:
     return [
-        {
-            "name": "Get some coffee",
-            "scene": CoffeeScene()
-        },
-
-        {
-            "name": "Declare Whodunit!",
-            "scene": DelcareMurdererScene()
-        }
+        RoomAction(name="Coffee run", scene=CoffeeScene()),
+        RoomAction(name="Declare Whodunit!", scene=DelcareMurdererScene())
     ]
 
 
@@ -35,51 +27,48 @@ office = Place(
             id="kitchen",
             name="Kitchen",
             description="You walk into the kitchen. The sink is filled with dirty coffee cups. There's White Claw  & LaCroix cans overflowing the recycling bin. Dan I & Dan S are trying to figure out how to make coffee.",
-            interactions=[
-                Interaction(
-                    entity=NamedEntity("dan_s", "Dan S"),
+            actions=[
+                RoomAction(
+                    name="Talk to Dan S",
                     scene=DanSInterviewScene(),
                 ),
-                Interaction(
-                    entity=NamedEntity("dan_i", "Dan I"),
+                RoomAction(
+                    name="Talk to Dan I",
                     scene=DanIInterviewScene(),
                 ),
-            ],
-            actions=_get_room_actions()
+            ] + _get_room_actions(),
         ),
 
         Room(
             id="engineering_table",
             name="Engineering Table",
             description="You walk over to the Engineering Table. Dee and Joy are at the table discussing how to best implement Andrea's hopes & desires for the Candidate flow.",
-            interactions=[
-                Interaction(
-                    entity=NamedEntity("joy", "Joy"),
+            actions=[
+                RoomAction(
+                    name="Talk to Joy",
                     scene=JoyInterviewScene(),
                 ),
-                Interaction(
-                    entity=NamedEntity("dee", "Dee"),
+                RoomAction(
+                    name="Talk to Dee",
                     scene=DeeInterviewScene(),
                 ),
-            ],
-            actions=_get_room_actions()
+            ] + _get_room_actions(),
         ),
 
         Room(
             id="bathroom",
             name="Bathroom",
             description="You make your way to the bathroom. In the hall you see Lauren digging for something in the closet, boxes strewn everywhere. Daniel E & Dan B are standing in line to use the bathroom. Too much coffee for everyone this morning.",
-            interactions=[
-                Interaction(
-                    entity=NamedEntity("daniel_e", "Daniel E"),
+            actions=[
+                RoomAction(
+                    name="Talk to Daniel E",
                     scene=DanielEInterviewScene(),
                 ),
-                Interaction(
-                    entity=NamedEntity("dan_b", "Dan B"),
+                RoomAction(
+                    name="Talk to Dan B",
                     scene=DanBInterviewScene(),
                 ),
-            ],
-            actions=_get_room_actions()
+            ] + _get_room_actions(),
         )
     ]
 )
