@@ -10,15 +10,13 @@ from engine.printer.theme import custom_theme
 
 console = Console(theme=custom_theme)
 
-state = {
-    "current_char_width": 0
-}
+state = {"current_char_width": 0}
+
 
 @dataclass
 class Content:
     style: str
     text: str
-
 
 
 def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
@@ -41,7 +39,7 @@ def input(valid_inputs: Optional[list[str]] = None) -> str:
 
     if valid_inputs:
         options = _get_input_options(valid_inputs)
-        select_options = "\n".join([option['label'] for option in options])
+        select_options = "\n".join([option["label"] for option in options])
         options_prompt = f"[info]Please select:\n{select_options}"
         print(options_prompt, delay=0, pause=0)
 
@@ -86,24 +84,18 @@ def _get_style_from_string(content: str) -> str:
     else:
         return ""
 
-    
+
 def _get_input_options(option_strings: list[str]) -> dict:
     options_map = {}
-
-    for option_string in option_strings:
-        for index, char in enumerate(option_string):
-            shortcut = str(index + 1)
-
-            if not options_map.get(shortcut):
-                options_map[shortcut] = {
-                    "shortcut": shortcut,
-                    "label": f"$[primary]({shortcut})$ {option_string}",
-                    "text": option_string
-                }
-                break
+    for index, option_string in enumerate(option_strings):
+        shortcut = str(index + 1)
+        options_map[shortcut] = {
+            "shortcut": shortcut,
+            "label": f"$[primary]({shortcut})$ {option_string}",
+            "text": option_string,
+        }
 
     return list(options_map.values())
-
 
 
 def _print_content(content: Content, delay: float):
