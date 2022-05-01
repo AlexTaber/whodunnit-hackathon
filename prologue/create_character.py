@@ -9,6 +9,9 @@ class CreateCharacterScene(Scene):
         print("What is your name?")
         game_state.player_name = input()
 
+        if game_state.player_name.lower() == "qa":
+            game_state.dev_mode = True
+
         print("Select character class:")
 
         self._print_class("Engineer", "Crippling Anxiety")

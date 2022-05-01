@@ -5,6 +5,7 @@ from typing import Optional
 
 from rich.console import Console
 
+from engine.game import game
 from engine.printer.theme import custom_theme
 
 console = Console(theme=custom_theme)
@@ -23,7 +24,8 @@ def print(content: str, end="\n", delay=0.02, pause=0.5) -> None:
     for content in content_arr:
         _print_content(content, delay)
 
-    sleep(pause)
+    if not game.state.dev_mode:
+        sleep(pause)
 
     console.print("", end=end)
 
@@ -102,4 +104,5 @@ def _print_content(content: Content, delay: float):
     for char in content.text:
         console.print(f"{content.style}{char}", end="")
 
-        sleep(delay)
+        if not game.state.dev_mode:
+            sleep(delay)
