@@ -6,6 +6,9 @@ from state import game_state
 class PetGunnerScene(Scene):
     def run(self):
         game_state.pet_gunner = True
+        print("Gunner eyes you curiously, as if trying to determine what kind of person you are.")
+        print("You want to show him you're a good person!")
         print("You give Gunner the many pets he deserves.")
-        print("He is such a good pupper!")
+        print("Gunner accepts your pets and leaves, seemingly satisfied by your impeccable character.")
+        print("What a good pupper!")
         return game_state.previous_scene
