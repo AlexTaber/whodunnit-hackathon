@@ -1,6 +1,6 @@
-from battle.actions.model import Action
-from battle.characters.model import Character
-from battle.players.model import Player
+from engine.battle.action import Action
+from engine.battle.character import Character
+from engine.battle.player import Player
 from engine.printer import input
 
 

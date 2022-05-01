@@ -1,7 +1,7 @@
-from battle.battles import RiggedBattle
-from battle.players.ai_player import AiPlayer
-from battle.players.human_player import HumanPlayer
-from battle_configuration.npc_characters import dan_i, gunner
+from engine.battle.battles import RiggedBattle
+from engine.battle.ai_player import AiPlayer
+from engine.battle.human_player import HumanPlayer
+from battle.npc_characters import dan_i, gunner
 from state import game_state
 from engine.scene import Scene
 from prologue.the_end import TheEnd

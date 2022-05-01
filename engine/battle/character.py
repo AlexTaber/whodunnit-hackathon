@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from battle.jobs.model import Job
+from engine.battle.job import Job
 
 
 class Character(BaseModel):

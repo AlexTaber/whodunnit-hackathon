@@ -1,6 +1,6 @@
 from typing import Optional
 from engine.game.state import GameState
-from battle.characters.model import Character
+from engine.battle.character import Character
 
 class NOTDGameState(GameState):
     def __init__(self):

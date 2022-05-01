@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
-    from battle.characters.model import Character
+    from engine.battle.character import Character
 
 
 class SideEffect(ABC):

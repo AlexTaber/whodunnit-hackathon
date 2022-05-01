@@ -1,6 +1,3 @@
-
-
-
 from engine.scene import Scene
 from engine.printer import print
 from state import game_state

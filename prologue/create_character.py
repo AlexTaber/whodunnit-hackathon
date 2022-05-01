@@ -2,8 +2,8 @@ from engine.scene import Scene
 from engine.printer import print, input
 from prologue.intro import IntroScene
 from state import game_state
-import battle_configuration.jobs as jobs
-from battle.characters.model import Character
+import battle.jobs as jobs
+from engine.battle.character import Character
 
 
 class CreateCharacterScene(Scene):

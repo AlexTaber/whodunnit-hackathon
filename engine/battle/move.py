@@ -2,8 +2,8 @@ from typing import Optional
 
 from pydantic import BaseModel
 
-from battle.side_effects.base import ResetLimitBreak
-from battle.side_effects.interface import SideEffect
+from engine.battle.side_effects.base import ResetLimitBreak
+from engine.battle.side_effects.interface import SideEffect
 
 
 class Move(BaseModel):

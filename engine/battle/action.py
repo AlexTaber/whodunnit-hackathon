@@ -1,5 +1,5 @@
-from battle.characters.model import Character
-from battle.moves.model import LimitBreak, Move
+from engine.battle.character import Character
+from engine.battle.move import LimitBreak, Move
 from engine.printer import print
 
 

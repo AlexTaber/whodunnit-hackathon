@@ -1,4 +1,4 @@
-from battle.moves.model import LimitBreak, Move
+from engine.battle.move import LimitBreak, Move
 
 # White Mage / Dog
 revive = Move(name="Revive", description="Woof! {CASTER} revives {TARGET}!")

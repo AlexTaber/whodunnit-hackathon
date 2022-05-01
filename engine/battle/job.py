@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from battle.moves.model import Move
+from engine.battle.move import Move
 
 
 class Job(BaseModel):

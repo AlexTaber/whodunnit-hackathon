@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from battle.actions.model import Action
-from battle.characters.model import Character
+from engine.battle.action import Action
+from engine.battle.character import Character
 
 
 class Player(ABC):

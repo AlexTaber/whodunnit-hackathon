@@ -1,5 +1,5 @@
-import battle_configuration.moves as moves
-from battle.jobs.model import Job
+import battle.moves as moves
+from engine.battle.job import Job
 
 white_mage_dog = Job(
     name="White Mage / Dog",

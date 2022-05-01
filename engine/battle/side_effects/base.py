@@ -1,9 +1,9 @@
 from typing import TYPE_CHECKING
 
-from battle.side_effects.interface import SideEffect
+from engine.battle.side_effects.interface import SideEffect
 
 if TYPE_CHECKING:
-    from battle.characters.model import Character
+    from engine.battle.character import Character
 
 
 class ResetLimitBreak(SideEffect):
