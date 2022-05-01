@@ -5,7 +5,7 @@ from state import game_state
 
 class DanBInterviewScene(Scene):
     def run(self):
-        print("[secondary]Terrible news about the dead guy.")
+        print("[secondary]Terrible news about the dead guy. Anyway...")
         print(
             "[secondary]Do you want to hear my latest recording I finished this morning?"
         )

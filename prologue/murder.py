@@ -46,7 +46,7 @@ class MurderScene(Scene):
         print(
             "\nYou hear them breathe. You run to the VC honcho. As the life drains from their lips, they say..."
         )
-        print("[primary]\n...Dan killed me...", delay=0.2)
+        print("[danger]\n...Dan killed me...", delay=0.2)
         print("\nOh God! How could Dan do such a thing?")
         print("Wait a second. Which Dan was it? There are like a |[primary]THOUSAND| Dans at RippleMatch!")
 
