@@ -1,3 +1,5 @@
+import inflect
+
 from engine.scene import Scene
 from engine.printer import print, input
 from prologue.intro import IntroScene
@@ -6,9 +8,12 @@ import battle.jobs as jobs
 from engine.battle.character import Character
 
 
+p = inflect.engine()
+
+
 class CreateCharacterScene(Scene):
     def run(self) -> Scene:
-        print("What is your name?")
+        print("[info]What is your name?")
         player_name = input()
 
         if player_name.lower() == "qa":
@@ -37,7 +42,7 @@ class CreateCharacterScene(Scene):
         )
 
         self._print_selected_class(
-            f"You're an $[primary]{selected_job.name}$, {selected_job.motto}",
+            f"You're |[primary]{p.a(selected_job.name)}|, {selected_job.motto}",
             {
                 "Intelligence": selected_job.base_intelligence,
                 "Charisma": selected_job.base_charisma,
@@ -50,10 +55,10 @@ class CreateCharacterScene(Scene):
 
     def _print_class(self, name: str, ability: str):
         print(f"[primary]\n{name}", delay=0)
-        print(f"Special Ability: $[secondary]{ability}", delay=0)
+        print(f"Special Ability: |[secondary]{ability}", delay=0)
 
     def _print_selected_class(self, desc: str, stats: dict):
         print(desc)
 
         for key in list(stats.keys()):
-            print(f"[primary]{key}: $[secondary]{stats.get(key)}", delay=0)
+            print(f"[primary]{key}: |[secondary]{stats.get(key)}", delay=0)

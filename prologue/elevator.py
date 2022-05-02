@@ -23,7 +23,7 @@ class ElevatorScene(Scene):
         print("[primary]ten", delay=0.3, end=" ")
         print("more times?")
         input(["Yes"])
-        print("Thankfully, the eighth time's the charm, and the key turns")
+        print("Thankfully, the eighth time's the charm, and the key turns.")
         print("The elevator lurches to life and brings you to the sixth floor.")
 
         return AlarmScene()

@@ -18,4 +18,4 @@ class Character(BaseModel):
 
     @property
     def label(self):
-        return f"$[primary]Lvl {self.level} {self.job.name} {self.name.upper()}$"
+        return f"|[primary]Lvl {self.level} {self.job.name} {self.name.upper()}|"

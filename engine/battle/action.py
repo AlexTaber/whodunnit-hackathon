@@ -45,6 +45,6 @@ class Action:
 
     def _print_spell(self, move):
         print(
-            f"{self.caster.label} casts $[secondary]'{move.name.upper()}'$ on "
+            f"{self.caster.label} casts |[secondary]'{move.name.upper()}'| on "
             f"{self.target.label}!"
         )

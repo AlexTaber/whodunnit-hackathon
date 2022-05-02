@@ -10,7 +10,7 @@ class RoomScene(Scene):
     def run(self) -> Scene:
         actions = self.room.get_actions()
 
-        print(f"\n\n{self.room.description}")
+        print(f"\n{self.room.description}")
         print("What do you want to do?")
         input_value = input(self._get_input_options(actions))
 

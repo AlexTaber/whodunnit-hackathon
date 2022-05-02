@@ -11,6 +11,7 @@ pydantic = "^1.9.0"
 black = "^22.3.0"
 flake8 = "^4.0.1"
 pyinstaller = "^5.0.1"
+inflect = "^5.6.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
