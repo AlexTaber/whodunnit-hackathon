@@ -40,7 +40,7 @@ class TitleScene(Scene):
         """,
             delay=0.001,
         )
-        print("Off-By-One Entertainment.  All Rights Reserved.\n")
+        print("Off-By-One Entertainment. All Rights Reserved.\n")
         print("[info]Press enter to continue...")
         input(None)
         return CreateCharacterScene()

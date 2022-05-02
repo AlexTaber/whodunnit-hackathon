@@ -92,8 +92,13 @@ class RiggedBattle(BaseBattle):
             self._revive_player()
 
     def _revive_player(self):
-        print(f"{self.savior.label} arrives at your side!")
-        for move in self.savior.job.moves:
-            action = Action(move=move, caster=self.savior, target=self.player.character)
-            action.execute()
-            self._battle()
+        winner = None
+        while winner != self.player.character:
+            print(f"{self.savior.label} arrives at your side!")
+            for move in self.savior.job.moves:
+                action = Action(
+                    move=move, caster=self.savior, target=self.player.character
+                )
+                action.execute()
+            winner = self._battle()
+        return winner

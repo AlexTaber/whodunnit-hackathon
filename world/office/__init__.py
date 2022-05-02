@@ -36,7 +36,7 @@ office = Place(
         Room(
             id="kitchen",
             name="Kitchen",
-            description="You walk into the kitchen. The sink is filled with dirty coffee cups. There's White Claw  & LaCroix cans overflowing the recycling bin. Dan I & Dan S are trying to figure out how to make coffee.",
+            description="You walk into the kitchen. The sink is filled with dirty coffee cups. There's White Claw & LaCroix cans overflowing the recycling bin. Dan I & Dan S are trying to figure out how to make coffee.",
             get_actions=_get_room_actions([
                 RoomAction(
                     name="Talk to Dan S",
