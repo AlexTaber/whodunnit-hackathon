@@ -52,7 +52,7 @@ refactoring = Move(
     name="Refactoring",
     base_heal=5,
     default_to_target_self=True,
-    description="{CASTER} refactors {TARGET}'s code.  What relief!",
+    description="{CASTER} refactors {TARGET}'s code. What relief!",
 )
 
 # Product Manager
@@ -134,8 +134,8 @@ supernova = LimitBreak(
     base_dmg=99,
     description=(
         "{CASTER} channels his knowledge of arcane geometry to draw "
-        "Alpha Centauri into our sun.  A blinding stellar explosion "
-        "envelops Mercury and Venus.  The stratosphere ignites into an "
+        "Alpha Centauri into our sun. A blinding stellar explosion "
+        "envelops Mercury and Venus. The stratosphere ignites into an "
         "inferno of white-hot plasma."
     ),
 )
@@ -152,7 +152,7 @@ jira_mastery = LimitBreak(
     name="Jira Mastery",
     base_dmg=99,
     description=(
-        "The sky darkens.  A cloud of Jira tickets blots out "
+        "The sky darkens. A cloud of Jira tickets blots out "
         "the sun. {TARGET} is overwhelmed by 9999 story points."
     ),
 )

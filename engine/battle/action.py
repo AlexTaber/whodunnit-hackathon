@@ -11,7 +11,7 @@ class Action:
 
     def execute(self) -> None:
         # This is slapdash. Later, we'd want to account for character level,
-        # accuracy, status effects, etc.  Kept simple for now.
+        # accuracy, status effects, etc. Kept simple for now.
         #
         # We'll also want to decouple state update logic and
         # presentational logic
