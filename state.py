@@ -1,6 +1,16 @@
 from typing import Optional
-from engine.game.state import GameState
+
+from pydantic import BaseModel
+
 from engine.battle.character import Character
+from engine.game.state import GameState
+
+
+class FishingState(BaseModel):
+    current_streak: int = 0
+    record_streak: int = 0
+    record_weight: float = 0.0
+
 
 class NOTDGameState(GameState):
     def __init__(self):
@@ -8,9 +18,7 @@ class NOTDGameState(GameState):
         self.player_character: Optional[Character] = None
         self.pet_gunner = False
         self.dan_i_interactions = 0
+        self.fishing: FishingState = FishingState()
 
-    @property
-    def qa_mode(self):
-        return self.player_name.lower() == "qa"
 
 game_state = NOTDGameState()

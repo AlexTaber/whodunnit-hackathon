@@ -1,10 +1,11 @@
+from engine.printer import input, print
 from engine.scene import Scene
-from engine.printer import print, input
 from prologue.create_character import CreateCharacterScene
+from world.office.scenes.fishing import FishingScene
 
 
 class TitleScene(Scene):
-    def run(self) -> CreateCharacterScene:
+    def run(self) -> Scene:
         print(
             """
  ███▄    █  ██▓  ▄████  ██░ ██ ▄▄▄█████▓    ▒█████    █████▒    ▄▄▄
@@ -42,5 +43,7 @@ class TitleScene(Scene):
         )
         print("Off-By-One Entertainment. All Rights Reserved.\n")
         print("[info]Press enter to continue...")
-        input(None)
+        value = input(None)
+        if value == "fishing":
+            return FishingScene()
         return CreateCharacterScene()
