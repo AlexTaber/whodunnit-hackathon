@@ -26,7 +26,6 @@ class OscillatingMeterPrompt(threading.Thread):
     def run(self):
         current_thread = threading.currentThread()
         while self.should_run:
-            # while getattr(current_thread, "should_run", True):
             time.sleep(self.increment_length / 1000000)
 
             if getattr(current_thread, "should_run", True):
@@ -43,18 +42,15 @@ class OscillatingMeterPrompt(threading.Thread):
 
 
 def get_input_from_oscilating_meter(label: str, num_increments: int):
-    """Get the reel strength from the user."""
+    """Use the OscillatingMeterPrompt to get input from the user."""
+
     # Create and start thread to continously overwrite input prompt
     reel_input = OscillatingMeterPrompt(label, num_increments)
     reel_input.start()
 
     # Get value of meter when user presses "Enter" -- we ignore the actual input
-    # value, since we're only interested in the value of the meter
+    # value, since we're only interested in the value of the meter at the time
+    # the key was pressed.
     input(reel_input.get_prompt())
     reel_input.should_run = False
     return reel_input.meter_value
-
-
-if __name__ == "__main__":
-    print("Press ENTER to test your might")
-    print(get_input_from_oscilating_meter("POWER", 20))
