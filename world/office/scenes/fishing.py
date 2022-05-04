@@ -89,7 +89,7 @@ class FishingScene(Scene):
             print(f"[info]Streak record: {fishing_state.record_streak} fish in a row")
 
     def _get_available_fish(self, fishing_state: FishingState) -> list[FishSpecies]:
-        available_fish = regular_fish
+        available_fish = [fish for fish in regular_fish]
         if fishing_state.current_streak >= self.min_streak_for_big_chungus:
             available_fish.append(big_chungus)
         return available_fish
