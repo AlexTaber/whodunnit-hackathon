@@ -3,12 +3,12 @@
 To play:
 - [Install pipx](https://github.com/pypa/pipx#install-pipx)
 ```sh
-pipx run --spec <url-to-this-repo> whodunnit
+pipx run --spec git+https://github.com/AlexTaber/whodunnit-hackathon@runner whodunnit
 ```
 
 OR
 ```sh
-$ pipx install <url-to-this-repo>
+$ pipx install git+https://github.com/AlexTaber/whodunnit-hackathon@runner
 $ whodunnit
 ```
 
